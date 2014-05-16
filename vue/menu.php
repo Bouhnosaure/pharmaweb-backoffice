@@ -16,6 +16,9 @@
             <ul id="menu" class="nav navbar-nav">
                 <li class="<?php if(isset($_GET['page']) && $_GET['page'] == "liste_users"){echo "active";}else{echo "";} ?>"><a href="?page=liste_users" title="Liste des utilisateurs">Liste des utilisateurs</a></li>
                 <li class="<?php if(isset($_GET['page']) && $_GET['page'] == "liste_products"){echo "active";}else{echo "";} ?>"><a href="?page=liste_products" title="Liste des produits">Liste des produits</a></li>
+                <li class="<?php if(isset($_GET['page']) && $_GET['page'] == "liste_commande"){echo "active";}else{echo "";} ?>"><a href="?page=liste_commande" title="Liste des commandes">Liste des commandes</a></li>
+                <li class="<?php if(isset($_GET['page']) && $_GET['page'] == "liste_question"){echo "active";}else{echo "";} ?>"><a href="?page=liste_question" title="Liste des questions">Liste des questions</a></li>
+                <li class="<?php if(isset($_GET['page']) && $_GET['page'] == "liste_fournisseur"){echo "active";}else{echo "";} ?>"><a href="?page=liste_fournisseur" title="Liste des fournisseurs">Liste des fournisseurs</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="?page=accueil&deconnexion=true">Deconnexion</a></li>

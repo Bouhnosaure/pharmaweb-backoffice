@@ -9266,7 +9266,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "Pas de donées dans la table",
+			"sEmptyTable": "Pas de données dans la table",
 		
 		
 			/**

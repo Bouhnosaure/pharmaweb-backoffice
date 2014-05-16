@@ -20,35 +20,35 @@
             </div>
         </div>
         <?php
-            $select = new Products();
+            $select = new Commande();
             $html = "";
         ?>
         <table id="table" class='table table-bordered table-condensed'>
             <thead>
                 <tr>
-                    <th>Produit</th>
-                    <th>Stock actuel</th>
-                    <th>Catégorie</th>
-                    <th>Classe pharmacetique</th>
-                    <th>Réduction</th>
-                    <th>Taxe</th>
+                    <th>Statut</th>
+                    <th>Client</th>
+                    <th>Sexe client</th>
+                    <th>Numéro de téléphone client</th>
+                    <th>Numéro de téléphone portable client</th>
+                    <th>Mail client</th>
                     <th>Modifier</th>
                     <th>Supprimer</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach($select->selectProducts() as $v){                    
-                        $html .= "<tr><td>". $v['PRODUCTS_LABEL'] . "</td>";
-                        $html .= "<td>". $v['PRODUCTS_ACTUAL_STOCK'] . "</td>";
-                        $html .= "<td>". $v['CATEGORIES_LABEL'] . "</td>";
-                        $html .= "<td>". $v['PHARMA_CLASSES_LABEL'] . "</td>";
-                        $html .= "<td>". $v['PHARMA_CLASSES_PAYOFF'] . "</td>";
-                        $html .= "<td>". $v['TAXES_RATE'] . "</td>";
-                        $html .= "<td><a href='?page=one_product&id_product=" . $v['PRODUCTS_ID'] . "'><span class='glyphicon glyphicon-pencil'></span></a></td>";
-                        $html .= "<td><a href='#'><span class='glyphicon glyphicon-trash'></span></a></td></tr>";
-                    }
-                    echo $html;
+                foreach($select->selectCommandes() as $v){
+                    $html .= "<tr><td>". $v['STATUTS_LABEL'] . "</td>";
+                    $html .= "<td>". $v['USERS_NAME'] . "</td>";
+                    $html .= "<td>". $v['USERS_GENDER'] . "</td>";
+                    $html .= "<td>". $v['USERS_PHONE'] . "</td>";
+                    $html .= "<td>". $v['USERS_MOBILE'] . "</td>";
+                    $html .= "<td>". $v['USERS_MAIL'] . "</td>";
+                    $html .= "<td><a href='?page=one_fournisseur&mail=" . $v['USERS_MAIL'] . "'><span class='glyphicon glyphicon-pencil'></span></a></td>";
+                    $html .= "<td><a href='?page=liste_fournisseur'><span class='glyphicon glyphicon-trash'></span></a></td></tr>";
+                }
+                echo $html;
                 ?>
             </tbody>
         </table>

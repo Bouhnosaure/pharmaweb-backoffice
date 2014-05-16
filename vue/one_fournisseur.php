@@ -7,23 +7,8 @@
             ?>
             <form method="post" action="" enctype="multipart/form-data">
                 <input type="hidden" name="id_user" value="<?php echo $v['USERS_ID']; ?>" />
-
-                <div class="form-group">
-                    <label for="gender" class="control-label">Genre : </label>
-                    <select class="form-control" name="gender" id="gender">
-                        <?php
-                            if($v['USERS_GENDER'] == "Homme"){
-                                $sexe1 = "selected";
-                                $sexe2 = "";
-                            }else{
-                                $sexe1 = "";
-                                $sexe2 = "selected";
-                            }
-                        ?>
-                        <option value="<?php echo $v['USERS_GENDER'] ?>" <?php echo $sexe1; ?>>Homme</option>
-                        <option value="<?php echo $v['USERS_GENDER'] ?>" <?php echo $sexe2; ?>>Femme</option>
-                    </select>
-                </div>
+                
+                <input type="hidden" name="genre" value="<?php echo $v['USERS_GENDER'] ?>" />
 
                 <div class="form-group">
                     <label for="nom" class="control-label">Nom : </label>
@@ -35,10 +20,8 @@
                     <input type="text" name="prenom" id="prenom" class="form-control" required value="<?php echo $v['USERS_LASTNAME'];?>" />
                 </div>
 
-                <div class="form-group">
-                    <label for="num_secu_social" class="control-label">Numéro sécurité social : </label>
-                    <input type="text" name="num_secu_social" id="num_secu_social" class="form-control" required value="<?php echo $v['USERS_SOCIAL_NUMBER'];?>" />
-                </div>
+                <input type="hidden" name="num_secu_social"value="<?php echo $v['USERS_SOCIAL_NUMBER'];?>" />
+
 
                 <div class="form-group">
                     <label for="telephone" class="control-label">Téléphone : </label>
@@ -54,11 +37,9 @@
                     <label for="mail" class="control-label">Mail : </label>
                     <input type="text" name="mail" id="mail" class="form-control" required value="<?php echo $v['USERS_MAIL'];?>" />
                 </div>
+                
+                <input type="hidden" name="Date_de_naissance"value="<?php echo $v['USERS_BIRTH_DATE'];?>" />
 
-                <div class="form-group">
-                    <label for="Date_de_naissance" class="control-label">Date de naissance : </label>
-                    <input type="text" name="Date_de_naissance" id="Date_de_naissance" class="form-control" required value="<?php echo $v['USERS_BIRTH_DATE'];?>" />
-                </div>
 
                 <div class="form-group">
                     <label for="adresse" class="control-label">Adresse : </label>
@@ -80,10 +61,7 @@
                     <input type="text" name="ville" id="ville" class="form-control" required value="<?php echo $v['CITIES_NAME'];?>" />
                 </div>
 
-                <div class="form-group">
-                    <label for="centre_mutuel" class="control-label">Centre de mutuelle : </label>
-                    <input type="text" name="centre_mutuel" id="centre_mutuel" class="form-control" required value="<?php echo $v['MUTUALS_CENTERS_LABEL'];?>" />
-                </div>
+                <input type="hidden" name="centre_mutuel"value="<?php echo $v['MUTUALS_CENTERS_LABEL'];?>" />
                 
                 <div class="form-group grp-bouton text-center">
                     <button type="submit" class="btn btn-success">Enregistrer</button>
